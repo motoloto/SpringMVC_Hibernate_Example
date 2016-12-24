@@ -1,0 +1,24 @@
+建立表格: EMPLOYEE
+--------------------------------------------------------------------------------------------------------
+DROP TABLE EMPLOYEE;
+DROP SEQUENCE employee_seq;
+
+CREATE TABLE EMPLOYEE (
+ ID               NUMBER(4) NOT NULL,
+ NAME             VARCHAR2(10),
+ AGE			  NUMBER(3),
+ CONSTRAINT EMPLOYEE_ID_PK PRIMARY KEY (ID));
+ 
+CREATE SEQUENCE employee_seq
+INCREMENT BY 1
+START WITH 1
+NOMAXVALUE
+NOCYCLE
+NOCACHE;
+
+INSERT INTO EMPLOYEE VALUES (employee_seq.NEXTVAL,'KING',10);
+INSERT INTO EMPLOYEE VALUES (employee_seq.NEXTVAL,'BLAKE',30);
+INSERT INTO EMPLOYEE VALUES (employee_seq.NEXTVAL,'CLARK',15);
+
+commit;
+--------------------------------------------------------------------------------------------------------
